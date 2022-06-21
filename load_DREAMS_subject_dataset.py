@@ -1,25 +1,7 @@
 
+from functions import *
 
 
-def HYPNO (hypnogram):
-    '''
-    Reassigning the labels in hypnogram
-    
-    '''
-    h = []
-    for i in range(int(len(hypnogram)/6)):
-        h.append(int(stats.mode(hypnogram[i*6:(i+1)*6])[0][0]))
-    h = np.array(h)
-    h[h==0] = 10
-    h[h== -1] = 10
-    h[h== -2] = 10
-    h[h== -3] = 10
-    h[h==5] = 0
-    h[h==3] = 6
-    h[h==1] = 3
-    h[h==6] = 1
-    h = np.delete(h, np.where(h==10))
-    return  h
 
 Directory = "DREAMS_DatabaseSubjects\\"
 
